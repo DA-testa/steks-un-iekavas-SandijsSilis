@@ -17,12 +17,11 @@ def find_mismatch(text):
             opening_brackets_stack.append(next)
 
         if next in ")]}":
-            if not opening_brackets_stack or not are_matching(opening_brackets_stack[len(opening_brackets_stack) - 1], next):
+            if not opening_brackets_stack or not are_matching(next,opening_brackets_stack[len(opening_brackets_stack) - 1]):
                 print("Returning")
-                return i
-            print(opening_brackets_stack[len(opening_brackets_stack) - 1] + " popped")
-            opening_brackets_stack.pop()
-    return i+1
+                opening_brackets_stack.pop()
+                print(opening_brackets_stack[len(opening_brackets_stack) - 1] + " popped")
+            return i+1
             
 
 
