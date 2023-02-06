@@ -13,11 +13,17 @@ def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
         if next in "([{":
+            print(next + " appended")
             opening_brackets_stack.append(next)
 
         if next in ")]}":
+            if not opening_brackets_stack or not are_matching(opening_brackets_stack[len(opening_brackets_stack) - 1], next):
+                print("Returning")
+                return i
+            print(opening_brackets_stack[len(opening_brackets_stack) - 1] + " popped")
             opening_brackets_stack.pop()
-            return next
+    return i+1
+            
 
 
 def main():
@@ -26,7 +32,7 @@ def main():
     if not mismatch:
         print("Success")
     else:
-        print(mismatch + 1)
+        print(mismatch)
 
 
 if __name__ == "__main__":
