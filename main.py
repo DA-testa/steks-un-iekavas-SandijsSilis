@@ -13,15 +13,13 @@ def find_mismatch(text):
     opening_brackets_stack = []
     for i, next in enumerate(text):
         if next in "([{":
-            print(next + " appended")
             opening_brackets_stack.append(next)
 
         if next in ")]}":
-            if not opening_brackets_stack or not are_matching(next,opening_brackets_stack[len(opening_brackets_stack) - 1]):
-                print("Returning")
+            if not opening_brackets_stack or not are_matching(opening_brackets_stack[len(opening_brackets_stack) - 1], next):
+                return i+1
+            else:
                 opening_brackets_stack.pop()
-                print(opening_brackets_stack[len(opening_brackets_stack) - 1] + " popped")
-            return i+1
             
 
 
