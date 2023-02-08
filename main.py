@@ -24,7 +24,6 @@ def find_mismatch(text):
 
 
 def main():
-    type = input()
     text = input()
     mismatch = find_mismatch(text)
     if not mismatch:
