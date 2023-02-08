@@ -28,6 +28,7 @@ def main():
     mismatch = find_mismatch(text)
     if "I" in text:
         text = input()
+        mismatch = find_mismatch(text)
     if not mismatch:
         print("Success")
     else:
