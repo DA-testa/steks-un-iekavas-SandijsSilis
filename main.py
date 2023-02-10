@@ -25,10 +25,9 @@ def find_mismatch(text):
 
 def main():
     text = input()
+    if 'I' in text:
+        text = input()
     mismatch = find_mismatch(text)
-    while text=="I\r\n":
-        text.replace("I\r\n", "")
-        mismatch = find_mismatch(text)
     if not mismatch:
         print("Success")
     else:
