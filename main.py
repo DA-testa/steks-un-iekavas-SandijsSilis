@@ -27,8 +27,8 @@ def main():
     text = input()
     if 'I' in text:
         text = input()
-    if 'F' in text:
-        text = open("testfile.txt", "r")
+    if 'F' in text:        
+        pass
     mismatch = find_mismatch(text)
     if not mismatch:
         print("Success")
