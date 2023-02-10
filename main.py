@@ -26,8 +26,8 @@ def find_mismatch(text):
 def main():
     text = input()
     mismatch = find_mismatch(text)
-    while text=="I" or text=="" or text=="\n" or text=="i" or text==" ":
-        text = input()
+    while text=="I\r\n":
+        text.replace("I\r\n", "")
         mismatch = find_mismatch(text)
     if not mismatch:
         print("Success")
